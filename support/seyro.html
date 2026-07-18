@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Seyro — Support / Destek</title>
+<link rel="stylesheet" href="/support/style.css" />
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/support/">← All apps</a>
+
+  <!-- ================= ENGLISH ================= -->
+  <section id="en">
+    <h1>Seyro — Support</h1>
+    <p class="lang-switch"><strong>English</strong> · <a href="#tr">Türkçe</a></p>
+
+    <p>
+      Seyro is a tracker for shows and movies. Follow what you watch, mark episodes,
+      rate and take notes, see upcoming air dates on the calendar, and sync your
+      library across devices with an optional account.
+    </p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <h3>How do I add a show?</h3>
+      <p>Open the Discover tab, search for the show and tap "Add to Watchlist". Posters, summaries and full episode lists are added automatically.</p>
+
+      <h3>How do I mark episodes as watched?</h3>
+      <p>Open a show and tap episodes in the season list, or use "Mark next watched" on the Feed. Your progress and stats update automatically.</p>
+
+      <h3>Can I import my TV Time history?</h3>
+      <p>Yes. Go to More → Data and choose your TV Time export (GDPR folder, ZIP or CSV). Then tap "Refresh Metadata" to fetch posters and episodes.</p>
+
+      <h3>How does sync work?</h3>
+      <p>Create an account on the Profile screen (email, Google, or Sign in with Apple). Your library is backed up to the cloud and restored when you sign in on another device. Without an account, everything stays on your device.</p>
+
+      <h3>How do I get new-episode reminders?</h3>
+      <p>Enable notifications under More → Data → Episode reminders. You will be notified before tracked shows air new episodes.</p>
+
+      <h3>How do I delete my account?</h3>
+      <p>Go to Profile, tap the menu (⋯), choose "Delete Account" and confirm. This permanently deletes your account and your cloud library. Local data stays on your device.</p>
+    </div>
+
+    <h2>Contact</h2>
+    <p>Need help? Email <a href="mailto:mstfkuk@gmail.com">mstfkuk@gmail.com</a>. We usually reply within a few days.</p>
+    <p class="muted">Privacy policy: <a href="/privacy/seyro.html">mustafakuk.github.io/privacy/seyro.html</a></p>
+  </section>
+
+  <hr id="lang-divider" />
+
+  <!-- ================= TÜRKÇE ================= -->
+  <section id="tr" lang="tr">
+    <h1>Seyro — Destek</h1>
+    <p class="lang-switch"><a href="#en">English</a> · <strong>Türkçe</strong></p>
+
+    <p>
+      Seyro bir dizi ve film takip uygulamasıdır. İzlediklerini takip et, bölümleri
+      işaretle, puan ver ve not al, yaklaşan yayın tarihlerini takvimde gör; istersen
+      hesap açıp kitaplığını cihazların arasında eşitle.
+    </p>
+
+    <h2>Sıkça sorulan sorular</h2>
+    <div class="faq">
+      <h3>Dizi nasıl eklerim?</h3>
+      <p>Keşfet sekmesini aç, diziyi ara ve "İzleme Listesine Ekle"ye dokun. Afişler, özetler ve tüm bölüm listesi otomatik eklenir.</p>
+
+      <h3>Bölümleri izlendi olarak nasıl işaretlerim?</h3>
+      <p>Bir diziyi aç ve sezon listesindeki bölümlere dokun ya da Akış'taki "Sıradakini işaretle"yi kullan. İlerlemen ve istatistiklerin otomatik güncellenir.</p>
+
+      <h3>TV Time geçmişimi aktarabilir miyim?</h3>
+      <p>Evet. Daha Fazla → Veri bölümüne git ve TV Time dışa aktarımını seç (GDPR klasörü, ZIP veya CSV). Ardından afiş ve bölümleri getirmek için "Metadata Yenile"ye dokun.</p>
+
+      <h3>Eşitleme nasıl çalışır?</h3>
+      <p>Profil ekranından hesap oluştur (e-posta, Google veya Apple ile Giriş). Kitaplığın buluta yedeklenir ve başka bir cihazda oturum açtığında geri yüklenir. Hesapsız kullanımda her şey cihazında kalır.</p>
+
+      <h3>Yeni bölüm hatırlatmalarını nasıl açarım?</h3>
+      <p>Daha Fazla → Veri → Bölüm hatırlatıcıları altından bildirimleri aç. Takip ettiğin diziler yeni bölüm yayınlamadan önce bildirim alırsın.</p>
+
+      <h3>Hesabımı nasıl silerim?</h3>
+      <p>Profil'e git, menüye (⋯) dokun, "Hesabı Sil"i seç ve onayla. Bu işlem hesabını ve bulut kitaplığını kalıcı olarak siler. Yerel veriler cihazında kalır.</p>
+    </div>
+
+    <h2>İletişim</h2>
+    <p>Yardım mı lazım? <a href="mailto:mstfkuk@gmail.com">mstfkuk@gmail.com</a> adresine yaz. Genelde birkaç gün içinde yanıtlıyoruz.</p>
+    <p class="muted">Gizlilik politikası: <a href="/privacy/seyro.html">mustafakuk.github.io/privacy/seyro.html</a></p>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  var en = document.getElementById('en');
+  var tr = document.getElementById('tr');
+  var divider = document.getElementById('lang-divider');
+  if (!en || !tr) { return; }
+
+  function show(lang) {
+    en.style.display = lang === 'en' ? '' : 'none';
+    tr.style.display = lang === 'tr' ? '' : 'none';
+    if (divider) { divider.style.display = 'none'; }
+  }
+
+  var fromHash = location.hash === '#tr' ? 'tr' : (location.hash === '#en' ? 'en' : null);
+  var device = (navigator.language || 'en').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en';
+  show(fromHash || device);
+
+  Array.prototype.forEach.call(document.querySelectorAll('.lang-switch a'), function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      var lang = link.getAttribute('href') === '#tr' ? 'tr' : 'en';
+      history.replaceState(null, '', '#' + lang);
+      show(lang);
+      window.scrollTo(0, 0);
+    });
+  });
+})();
+</script>
+</body>
+</html>
