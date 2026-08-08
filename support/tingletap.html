@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TingleTap — Support / Destek</title>
+<link rel="stylesheet" href="/support/style.css" />
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/support/">← All apps</a>
+
+  <section id="en">
+    <h1>TingleTap — Support</h1>
+    <p class="lang-switch"><strong>English</strong> · <a href="#tr">Türkçe</a></p>
+    <p>TingleTap combines tactile toys, a release space and short guided sessions for quiet, focused breaks.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <h3>How does the daily free hour work?</h3>
+      <p>You receive 60 minutes each local calendar day. Time counts while a toy, the release space or a guided session is open. Browsing the home screen does not use it. The allowance resets at local midnight.</p>
+
+      <h3>What does the monthly membership unlock?</h3>
+      <p>It removes the daily time limit and provides unlimited access while the subscription is active. The subscription renews monthly unless cancelled in your Apple account settings.</p>
+
+      <h3>How do I restore a purchase?</h3>
+      <p>Open the daily-time counter at the top right, then choose “Restore purchases” on the membership screen. Use the same Apple account that made the purchase.</p>
+
+      <h3>How do I manage or cancel the subscription?</h3>
+      <p>Open Settings in TingleTap and choose “Manage” under TingleTap Premium. Apple’s subscription-management screen will open.</p>
+
+      <h3>Why do haptics feel different on another phone?</h3>
+      <p>Haptic hardware varies by device. Open Settings → Phone calibration and choose the profile that feels cleanest. Also confirm that system haptics are enabled.</p>
+
+      <h3>Where is my session data stored?</h3>
+      <p>Stress check-ins, counters, preferences and daily-use time stay on your device. You can remove them from Settings → Reset data.</p>
+    </div>
+
+    <h2>Contact</h2>
+    <p>Need help with access, purchases or the app? Email <a href="mailto:mstfkuk@gmail.com">mstfkuk@gmail.com</a>. Include your device model and iOS version, but do not send payment-card information.</p>
+    <p class="muted">Privacy policy: <a href="/privacy/tingletap.html">mustafakuk.github.io/privacy/tingletap.html</a></p>
+  </section>
+
+  <hr id="lang-divider" />
+
+  <section id="tr" lang="tr">
+    <h1>TingleTap — Destek</h1>
+    <p class="lang-switch"><a href="#en">English</a> · <strong>Türkçe</strong></p>
+    <p>TingleTap; dokunsal oyuncakları, boşaltma alanını ve kısa yönlendirilmiş seansları sakin ve odaklı molalar için bir araya getirir.</p>
+
+    <h2>Sıkça sorulan sorular</h2>
+    <div class="faq">
+      <h3>Günlük ücretsiz bir saat nasıl çalışır?</h3>
+      <p>Her yerel takvim gününde 60 dakika kullanabilirsin. Oyuncak, boşaltma alanı veya yönlendirilmiş seans açıkken süre sayılır. Ana ekranda gezinmek süreyi kullanmaz. Hak yerel saatle gece yarısında yenilenir.</p>
+
+      <h3>Aylık üyelik neyi açar?</h3>
+      <p>Günlük süre sınırını kaldırır ve abonelik etkin olduğu sürece sınırsız erişim sağlar. Apple hesap ayarlarından iptal edilmezse üyelik her ay yenilenir.</p>
+
+      <h3>Satın alımı nasıl geri yüklerim?</h3>
+      <p>Sağ üstteki günlük süre sayacını aç, ardından üyelik ekranında “Satın alımları geri yükle”yi seç. Satın almayı yapan Apple hesabını kullanmalısın.</p>
+
+      <h3>Aboneliği nasıl yönetir veya iptal ederim?</h3>
+      <p>TingleTap’te Ayarlar’ı aç ve TingleTap Premium altında “Yönet”i seç. Apple’ın abonelik yönetimi ekranı açılır.</p>
+
+      <h3>Titreşim başka telefonda neden farklı?</h3>
+      <p>Titreşim donanımı cihazdan cihaza değişir. Ayarlar → Telefon kalibrasyonu yolundan elinde en temiz hissedilen profili seç. Sistem titreşimlerinin açık olduğunu da kontrol et.</p>
+
+      <h3>Seans verilerim nerede saklanıyor?</h3>
+      <p>Stres girişleri, sayaçlar, tercihler ve günlük kullanım süresi cihazında kalır. Ayarlar → Verileri sıfırla yolundan silebilirsin.</p>
+    </div>
+
+    <h2>İletişim</h2>
+    <p>Erişim, satın alma veya uygulamayla ilgili yardım için <a href="mailto:mstfkuk@gmail.com">mstfkuk@gmail.com</a> adresine yaz. Cihaz modelini ve iOS sürümünü ekleyebilirsin; ödeme kartı bilgisi gönderme.</p>
+    <p class="muted">Gizlilik politikası: <a href="/privacy/tingletap.html">mustafakuk.github.io/privacy/tingletap.html</a></p>
+  </section>
+</div>
+
+<script>
+(function () {
+  var en = document.getElementById('en');
+  var tr = document.getElementById('tr');
+  var divider = document.getElementById('lang-divider');
+  function show(lang) {
+    en.style.display = lang === 'en' ? '' : 'none';
+    tr.style.display = lang === 'tr' ? '' : 'none';
+    divider.style.display = 'none';
+  }
+  var fromHash = location.hash === '#tr' ? 'tr' : (location.hash === '#en' ? 'en' : null);
+  var device = (navigator.language || 'en').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en';
+  show(fromHash || device);
+  Array.prototype.forEach.call(document.querySelectorAll('.lang-switch a'), function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      var lang = link.getAttribute('href') === '#tr' ? 'tr' : 'en';
+      history.replaceState(null, '', '#' + lang);
+      show(lang);
+      window.scrollTo(0, 0);
+    });
+  });
+})();
+</script>
+</body>
+</html>
