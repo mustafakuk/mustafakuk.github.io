@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Picklock — Privacy Policy / Gizlilik Politikası</title>
+<link rel="stylesheet" href="/privacy/style.css" />
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/privacy/">← All apps</a>
+
+  <section id="en">
+    <h1>Privacy Policy</h1>
+    <p class="muted">Picklock · Last updated: 6 October 2026</p>
+    <p class="lang-switch"><strong>English</strong> · <a href="#tr">Türkçe</a></p>
+
+    <p>This Privacy Policy explains how <strong>Picklock</strong> ("the app", "we", "us") handles information. The app is operated by Mustafa Kuk.</p>
+
+    <h2>Information handled by the app</h2>
+    <p>Picklock does not require an account and does not collect personal information. The following game data is stored only on your device:</p>
+    <ul>
+      <li>Your best score and your recent scores.</li>
+      <li>Rewards you have unlocked and the cosmetics you have equipped.</li>
+    </ul>
+    <p>This data never leaves your device and is not sent to us or to anyone else.</p>
+
+    <h2>No tracking, no advertising</h2>
+    <p>Picklock contains no advertising, no analytics and no third-party tracking SDKs. The game works fully offline and does not make network requests. We do not sell or share personal information.</p>
+
+    <h2>Purchases</h2>
+    <p>The current version of Picklock does not offer in-app purchases. If optional purchases are added in a future version, they will be processed by Apple through the App Store and this policy will be updated before that version is released.</p>
+
+    <h2>Data retention and deletion</h2>
+    <p>Game data stays on your device until you delete the app. Deleting Picklock removes all of its data.</p>
+
+    <h2>Children's privacy</h2>
+    <p>Picklock does not collect personal information from anyone, including children.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this policy as the app changes. The date above identifies the latest version.</p>
+
+    <h2>Contact</h2>
+    <p>Questions or privacy requests: <a href="mailto:mstfkuk@gmail.com">mstfkuk@gmail.com</a>.</p>
+  </section>
+
+  <hr id="lang-divider" />
+
+  <section id="tr" lang="tr">
+    <h1>Gizlilik Politikası</h1>
+    <p class="muted">Picklock · Son güncelleme: 6 Ekim 2026</p>
+    <p class="lang-switch"><a href="#en">English</a> · <strong>Türkçe</strong></p>
+
+    <p>Bu Gizlilik Politikası, Mustafa Kuk tarafından işletilen <strong>Picklock</strong> uygulamasının bilgileri nasıl işlediğini açıklar.</p>
+
+    <h2>Uygulamanın işlediği bilgiler</h2>
+    <p>Picklock hesap gerektirmez ve kişisel bilgi toplamaz. Aşağıdaki oyun verileri yalnızca cihazınızda saklanır:</p>
+    <ul>
+      <li>En iyi skorunuz ve son skorlarınız.</li>
+      <li>Açtığınız ödüller ve taktığınız kozmetikler.</li>
+    </ul>
+    <p>Bu veriler cihazınızdan çıkmaz; bize ya da başka birine gönderilmez.</p>
+
+    <h2>Takip ve reklam yok</h2>
+    <p>Picklock reklam, analitik veya üçüncü taraf takip yazılımı içermez. Oyun tamamen çevrimdışı çalışır ve ağ isteği yapmaz. Kişisel bilgileri satmayız ve paylaşmayız.</p>
+
+    <h2>Satın almalar</h2>
+    <p>Picklock'un mevcut sürümünde uygulama içi satın alma yoktur. İleride isteğe bağlı satın almalar eklenirse bunlar App Store üzerinden Apple tarafından işlenecek ve bu politika o sürüm yayınlanmadan önce güncellenecektir.</p>
+
+    <h2>Veri saklama ve silme</h2>
+    <p>Oyun verileri, uygulamayı silene kadar cihazınızda kalır. Picklock'u silmek tüm verilerini kaldırır.</p>
+
+    <h2>Çocukların gizliliği</h2>
+    <p>Picklock, çocuklar dahil hiç kimseden kişisel bilgi toplamaz.</p>
+
+    <h2>Bu politikadaki değişiklikler</h2>
+    <p>Uygulama değiştikçe bu politikayı güncelleyebiliriz. Yukarıdaki tarih en güncel sürümü gösterir.</p>
+
+    <h2>İletişim</h2>
+    <p>Sorular ve gizlilik talepleri: <a href="mailto:mstfkuk@gmail.com">mstfkuk@gmail.com</a>.</p>
+  </section>
+</div>
+
+<script>
+(function () {
+  var en = document.getElementById('en');
+  var tr = document.getElementById('tr');
+  var divider = document.getElementById('lang-divider');
+  function show(lang) {
+    en.style.display = lang === 'en' ? '' : 'none';
+    tr.style.display = lang === 'tr' ? '' : 'none';
+    divider.style.display = 'none';
+  }
+  var fromHash = location.hash === '#tr' ? 'tr' : (location.hash === '#en' ? 'en' : null);
+  var device = (navigator.language || 'en').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en';
+  show(fromHash || device);
+  Array.prototype.forEach.call(document.querySelectorAll('.lang-switch a'), function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      var lang = link.getAttribute('href') === '#tr' ? 'tr' : 'en';
+      history.replaceState(null, '', '#' + lang);
+      show(lang);
+      window.scrollTo(0, 0);
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Picklock — Support / Destek</title>
+<link rel="stylesheet" href="/support/style.css" />
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/support/">← All apps</a>
+
+  <section id="en">
+    <h1>Picklock — Support</h1>
+    <p class="lang-switch"><strong>English</strong> · <a href="#tr">Türkçe</a></p>
+    <p>Picklock is a one-tap reflex game: help a masked raccoon escape its cage by picking as many locks as you can in 30 seconds.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <h3>How do I play?</h3>
+      <p>Tap anywhere while the spinning needle is over a yellow or blue zone. Each lock is worth 1,000 points. Zones appear bright, shrink and fade within about 3 seconds, so catch them before they close. The needle reverses direction after every hit.</p>
+
+      <h3>What do blue zones and misses do?</h3>
+      <p>Blue zones add 1.5 seconds to the clock. If you tap when the needle is not over a zone, the needle turns red and stops for a moment; taps during that short pause do not count.</p>
+
+      <h3>How does the raccoon escape?</h3>
+      <p>Every lock opens the cage door a little. Pick 12 locks in one round and Picklock escapes.</p>
+
+      <h3>What is the boost button?</h3>
+      <p>Hold BOOST to spin the needle faster. It helps you reach zones sooner, but it also makes timing harder.</p>
+
+      <h3>How do I unlock and change rewards?</h3>
+      <p>Rewards unlock at score milestones from 6,000 to 70,000. Tap an unlocked reward in the main menu to equip or remove it.</p>
+
+      <h3>I don't hear any sound.</h3>
+      <p>Check that the speaker icon in the game is not muted and that your device volume is up. Picklock plays sound even when the silent switch is on.</p>
+
+      <h3>How do I reset my scores?</h3>
+      <p>All game data is stored only on your device. Deleting and reinstalling the app resets your scores and rewards.</p>
+    </div>
+
+    <h2>Contact</h2>
+    <p>Found a bug or have an idea? Email <a href="mailto:mstfkuk@gmail.com">mstfkuk@gmail.com</a>. Include your device model and iOS version.</p>
+    <p class="muted">Privacy policy: <a href="/privacy/picklock.html">mustafakuk.github.io/privacy/picklock.html</a></p>
+  </section>
+
+  <hr id="lang-divider" />
+
+  <section id="tr" lang="tr">
+    <h1>Picklock — Destek</h1>
+    <p class="lang-switch"><a href="#en">English</a> · <strong>Türkçe</strong></p>
+    <p>Picklock tek dokunuşla oynanan bir refleks oyunudur: 30 saniyede olabildiğince çok kilit açarak maskeli rakunun kafesten kaçmasına yardım et.</p>
+
+    <h2>Sıkça sorulan sorular</h2>
+    <div class="faq">
+      <h3>Nasıl oynanır?</h3>
+      <p>Dönen ibre sarı veya mavi bir alanın üstündeyken ekranın herhangi bir yerine dokun. Her kilit 1.000 puan. Alanlar parlak doğar, yaklaşık 3 saniyede daralıp söner; kapanmadan yakala. İbre her isabette yön değiştirir.</p>
+
+      <h3>Mavi alanlar ve ıskalama ne yapar?</h3>
+      <p>Mavi alanlar süreye 1,5 saniye ekler. İbre bir alanın üstünde değilken dokunursan ibre kırmızı olur ve kısa bir süre durur; bu kısa arada dokunuşlar sayılmaz.</p>
+
+      <h3>Rakun nasıl kaçar?</h3>
+      <p>Her kilit kafes kapısını biraz daha açar. Bir turda 12 kilit açarsan Picklock kaçar.</p>
+
+      <h3>HIZ düğmesi ne işe yarar?</h3>
+      <p>HIZ düğmesini basılı tutunca ibre hızlanır. Alanlara daha çabuk ulaşırsın ama zamanlama zorlaşır.</p>
+
+      <h3>Ödülleri nasıl açar ve değiştiririm?</h3>
+      <p>Ödüller 6.000'den 70.000'e kadar puan eşiklerinde açılır. Ana menüde açtığın bir ödüle dokunarak takabilir ya da çıkarabilirsin.</p>
+
+      <h3>Ses gelmiyor.</h3>
+      <p>Oyundaki hoparlör simgesinin kapalı olmadığından ve cihazın sesinin açık olduğundan emin ol. Picklock sessiz mod düğmesi açıkken de ses çalar.</p>
+
+      <h3>Skorlarımı nasıl sıfırlarım?</h3>
+      <p>Tüm oyun verileri yalnızca cihazında saklanır. Uygulamayı silip yeniden yüklemek skorlarını ve ödüllerini sıfırlar.</p>
+    </div>
+
+    <h2>İletişim</h2>
+    <p>Hata mı buldun ya da bir fikrin mi var? <a href="mailto:mstfkuk@gmail.com">mstfkuk@gmail.com</a> adresine yaz. Cihaz modelini ve iOS sürümünü eklemeyi unutma.</p>
+    <p class="muted">Gizlilik politikası: <a href="/privacy/picklock.html">mustafakuk.github.io/privacy/picklock.html</a></p>
+  </section>
+</div>
+
+<script>
+(function () {
+  var en = document.getElementById('en');
+  var tr = document.getElementById('tr');
+  var divider = document.getElementById('lang-divider');
+  function show(lang) {
+    en.style.display = lang === 'en' ? '' : 'none';
+    tr.style.display = lang === 'tr' ? '' : 'none';
+    divider.style.display = 'none';
+  }
+  var fromHash = location.hash === '#tr' ? 'tr' : (location.hash === '#en' ? 'en' : null);
+  var device = (navigator.language || 'en').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en';
+  show(fromHash || device);
+  Array.prototype.forEach.call(document.querySelectorAll('.lang-switch a'), function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      var lang = link.getAttribute('href') === '#tr' ? 'tr' : 'en';
+      history.replaceState(null, '', '#' + lang);
+      show(lang);
+      window.scrollTo(0, 0);
+    });
+  });
+})();
+</script>
+</body>
+</html>
